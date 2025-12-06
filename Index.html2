@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram MiniApp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      background-color: #0088cc;
+      color: white;
+    }
+    button:hover {
+      background-color: #006699;
+    }
+  </style>
+</head>
+<body>
+  <h1>Salom, Telegram foydalanuvchisi!</h1>
+  <p>Bu sizning miniappingiz.</p>
+  <button onclick="sendMessage()">Xabar yuborish</button>
+
+  <script>
+    function sendMessage() {
+      // Telegram Web App JS API bilan ishlash uchun misol
+      if (window.Telegram.WebApp) {
+        Telegram.WebApp.sendData("Salom! Bu miniappdan.");
+        alert("Xabar yuborildi!");
+      } else {
+        alert("Telegram WebApp API topilmadi!");
+      }
+    }
+  </script>
+</body>
+</html>
